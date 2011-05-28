@@ -1,0 +1,53 @@
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{/static/css/status.css" /> <!-- update this if necessary -->
+{% endblock %}
+
+{% block body %}
+<div id="status-body">
+<h2><a href="http://{{ site }}">{{ site|capfirst}}</a> status</h2>
+    <div class="monitor-app">
+        <div id="summary-header">Summary</div>
+        <div id="status-legend">
+            <div class="monitor-status status-0 status-small"></div><div class="status-legend-entry"> Good</div>
+            <div class="monitor-status status-1 status-small"></div><div class="status-legend-entry"> Warning</div>
+            <div class="monitor-status status-2 status-small"></div><div class="status-legend-entry"> Problem</div>
+        </div>
+    </div>
+    <div class="monitor">
+    {% for monitor in monitors %}
+        <div class="monitor-status status-{{ monitor.status }} status-small">
+        </div>
+    {% endfor %}
+    </div>
+    
+{% for app, monitors in monitor_groups %}
+    <div class="monitor-app">
+        {{ app|capfirst }}
+    </div>
+    {% for monitor in monitors %}
+        <div class="monitor{% if forloop.counter|divisibleby:"2" %} alt{% endif %}">
+            <div class="monitor-status status-{{ monitor.status }}">
+            </div>
+            <div class="monitor-report">
+                {{ monitor.report }}
+            </div>
+            {% if monitor.status %}
+            {% with monitor.notifiees.all as notifiees %}
+            <div class="notifiees">
+                Owner{{ notifiees|pluralize }}:
+                <ul>
+                    {% for notifiee in notifiees %}
+                    <li{% if request.user == notifiee %} class="self"{% endif %}>
+                        {{ notifiee.get_full_name }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endwith %}
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endfor %}
+</div>
+
+{% endblock %}

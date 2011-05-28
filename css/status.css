@@ -1,0 +1,113 @@
+body {
+    font-family: verdana, sans-serif;
+    font-size: 14px;
+}
+
+#status-body {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+DIV.monitor-app {
+    float: left;
+    clear: left;
+    background-color: #FFFFDD;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#summary-header {
+    float: left;
+    margin-right: 50px;
+    overflow: hidden;
+}
+
+#status-legend {
+    float: right;
+}
+
+DIV.status-legend-entry {
+    float: left;
+    margin-right: 50px;
+    font-weight: normal;
+}
+
+DIV.monitor {
+    padding: 15px;
+    overflow: hidden;
+    width: 620px;
+    display: block;
+    vertical-align: middle;
+}
+
+DIV.monitor-status {
+    overflow: hidden;
+    margin-right: 15px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+DIV.status-0-old {
+    background-color: #6E6;
+}
+
+DIV.status-1-old {
+    background-color: #FA4;
+}
+
+DIV.status-2-old {
+    background-color: #F66;
+}
+
+DIV.status-0 {
+    background-color: #DD6;
+}
+
+DIV.status-1 {
+    background-color: #06D;
+}
+
+DIV.status-2 {
+    background-color: #444;
+}
+
+DIV.status-small {
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+DIV.monitor-report {
+    overflow: hidden;
+    float: left;
+    width: 350px;
+}
+
+DIV.notifiees {
+    overflow: hidden;
+    float: right;
+    width: 175px;
+}
+
+DIV.alt {
+    background-color: #F8F8F8;
+}
+
+LI.self {
+    font-weight: bold;
+}
