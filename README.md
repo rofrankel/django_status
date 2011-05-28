@@ -19,9 +19,9 @@ and overriding the `status` function, returning something from
 `django_status.models.STATUS` as described above. See the *Installation and
 Usage* section for more.
 
-The dashboard will show the output of the `report` method for each monitor,
-which should just reuturn a string elaborating on the meaning of the result of
-`status`.  For example:
+You might always want to override the `report` method. The dashboard will show
+the output of `report()` for each monitor, which should just reuturn a string
+elaborating on the meaning of the result of `status()`. For example:
 
     def report(self):
         STATUS = django_status.models.STATUS
