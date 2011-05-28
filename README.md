@@ -77,9 +77,8 @@ Installation and Usage
    `IntegerField` in the base class, but you could certainly override them to
    make them so for your monitor.)
 * Register your monitor class by passing it to `django_status.monitor.register`.
-  For example:
-`from django_status.monitors import register
-register(MyMonitor)`
+  For example: `from django_status.monitors import register;
+  register(MyMonitor)`
 ** If you put an app's Monitor subclasses in e.g. monitors.py, you can pass the
    entire module to `register` instead, e.g. in the app's __init__.py.
 ** Registering a Monitor subclass with django\_status will automatically
