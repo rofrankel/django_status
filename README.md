@@ -70,18 +70,19 @@ Installation and Usage
 * Add `'django_status'` to settings.INSTALLED_APPS.
 * Subclass `django_status.models.Monitor`. Override the `status` method, which
   returns a value from `django_status.models.STATUS`.
-** There is one subclass provided, `django_status.models.AgeMonitor`. This is
-   useful if you want to monitor a timedelta. Just override `get_age` (which
-   should return a timedelta), `warning_seconds` (an integer), and
-   `problem_seconds` (another integer). (These aren't instances of
-   `IntegerField` in the base class, but you could certainly override them to
-   make them so for your monitor.)
+  * There is one subclass provided, `django_status.models.AgeMonitor`. This is
+    useful if you want to monitor a timedelta. Just override `get_age` (which
+    should return a timedelta), `warning_seconds` (an integer), and
+    `problem_seconds` (another integer). (These aren't instances of
+    `IntegerField` in the base class, but you could certainly override them to
+    make them so for your monitor.)
 * Register your monitor class by passing it to `django_status.monitor.register`.
-  For example: `from django_status.monitors import register;
-  register(MyMonitor)`
-** If you put an app's Monitor subclasses in e.g. monitors.py, you can pass the
+  For example:
+        from django_status.monitors import register;
+        register(MyMonitor)
+  * If you put an app's Monitor subclasses in e.g. monitors.py, you can pass the
    entire module to `register` instead, e.g. in the app's __init__.py.
-** Registering a Monitor subclass with django\_status will automatically
+  * Registering a Monitor subclass with django\_status will automatically
    register it in the Django admin.
 * Route a URL (e.g. `r'^status/$'`) to `django_status.views.status`.
 * Copy the included template and CSS to the appropriate locations (or create
