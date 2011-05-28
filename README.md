@@ -19,7 +19,7 @@ and overriding the `status` function, returning something from
 `django_status.models.STATUS` as described above. See the *Installation and
 Usage* section for more.
 
-You might always want to override the `report` method. The dashboard will show
+You probably want to override the `report` method, too. The dashboard will show
 the output of `report()` for each monitor, which should just reuturn a string
 elaborating on the meaning of the result of `status()`. For example:
 
